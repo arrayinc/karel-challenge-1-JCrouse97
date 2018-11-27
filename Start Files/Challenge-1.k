@@ -22,3 +22,36 @@ getting at least a little practice in decomposition. In your solution,
 decompose the program so that it includes a function for each step
 shown in the outline.
  */
+//***KAREL MUST START FACING RIGHT***
+
+import "turns";
+
+function toWall(){
+	while(frontIsClear()){
+		move();
+	}
+}
+
+function up() {
+	turnLeft();
+	move();
+	turnRight();
+}
+
+function right() {
+	move();
+}
+
+function left() {
+	turnAround();
+	move();
+	turnAround();
+}
+
+function down() {
+	turnRight();
+	move();
+	turnLeft();
+}
+
+//---------------------------------
