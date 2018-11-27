@@ -22,8 +22,10 @@ getting at least a little practice in decomposition. In your solution,
 decompose the program so that it includes a function for each step
 shown in the outline.
  */
-//***KAREL MUST START FACING RIGHT***
 
+//-------------------LOCAL LIBRARY---------------------
+
+//***KAREL MUST START FACING RIGHT***
 import "turns";
 
 function toWall(){
@@ -54,4 +56,29 @@ function down() {
 	turnLeft();
 }
 
-//---------------------------------
+//--------------Actual Program-------------------
+
+function GrabNewspaper(){
+	check();
+	return();
+}
+
+function check(){
+	while(noBeepersPresent()){
+		if(frontIsClear()){
+			right();
+		} else {
+				down();
+			}
+	}
+	pickBeeper();
+}
+
+
+function return(){
+	turnAround();
+	toWall();
+	turnRight();
+	move();
+	turnRight();
+}
